@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const { prompt } = require('../controllers/openAIController')
+const { getPromptResp } = require('../controllers/openAIController')
 
-router.get('/', prompt)
+router.post('/', getPromptResp)
 
 
 module.exports = router;
