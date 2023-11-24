@@ -1,0 +1,101 @@
+.card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    height: 185px;
+    overflow: hidden;
+    position: relative;
+    width: 411px;
+}
+
+.card .overlap-group {
+    height: 94px;
+    left: 23px;
+    position: absolute;
+    top: 30px;
+    width: 365px;
+}
+
+.card .nutritional-tips {
+    align-items: center;
+    display: inline-flex;
+    gap: 22px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.card .ellipse {
+    background-color: #fff7de;
+    border-radius: 21.5px/22px;
+    height: 44px;
+    position: relative;
+    width: 43px;
+}
+
+.card .frame {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+}
+
+.card .text-wrapper {
+    color: #000000;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: 172px;
+}
+
+.card .div {
+    color: #505050;
+    font-family: "Nunito-Regular", Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: 300px;
+}
+
+.card .group {
+    height: 17px;
+    left: 13px;
+    position: absolute;
+    top: 39px;
+    width: 20px;
+}
+
+.card .div-wrapper {
+    align-items: center;
+    background-color: #cdf1ff;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    height: 25px;
+    justify-content: center;
+    left: 303px;
+    padding: 10px;
+    position: absolute;
+    top: 148px;
+    width: 85px;
+}
+
+.card .text-wrapper-2 {
+    color: #0289c3;
+    font-family: "Nunito-SemiBold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: -6px;
+    margin-top: -8px;
+    position: relative;
+    width: fit-content;
+}
