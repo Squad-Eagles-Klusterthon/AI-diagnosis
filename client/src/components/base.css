@@ -1,0 +1,248 @@
+.base {
+    background-color: #0189c3;
+    border-radius: 18px;
+    height: 515px;
+    overflow: hidden;
+    position: relative;
+    width: 1310px;
+}
+
+.base .group {
+    height: 53px;
+    left: 453px;
+    position: absolute;
+    top: 22px;
+    width: 405px;
+}
+
+.base .nav {
+    align-items: center;
+    display: inline-flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+}
+
+.base .dagsb {
+    align-items: center;
+    background-color: #01aeef;
+    border-radius: 3px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    justify-content: center;
+    padding: 7px 16px;
+    position: relative;
+}
+
+.base .text-wrapper {
+    color: #ffffff;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+}
+
+.base .div-wrapper {
+    align-items: center;
+    border-radius: 3px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 4px;
+    justify-content: center;
+    padding: 7px 16px;
+    position: relative;
+}
+
+.base .div {
+    color: #ffffff;
+    font-family: "Nunito-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+}
+
+.base .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Nunito-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+}
+
+.base .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 32px;
+    font-weight: 700;
+    left: 86px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 25px;
+}
+
+.base .icon {
+    align-items: center;
+    display: inline-flex;
+    gap: 15px;
+    left: 1156px;
+    position: absolute;
+    top: 30px;
+}
+
+.base .notification {
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.base .overlap-group {
+    height: 22px;
+    left: 2px;
+    position: relative;
+    top: 1px;
+    width: 21px;
+}
+
+.base .vector {
+    height: 18px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 21px;
+}
+
+.base .img {
+    height: 5px;
+    left: 6px;
+    position: absolute;
+    top: 17px;
+    width: 10px;
+}
+
+.base .ellipse {
+    background-color: #fcb936;
+    border-radius: 4px;
+    height: 8px;
+    left: 11px;
+    position: absolute;
+    top: 0;
+    width: 8px;
+}
+
+.base .ellipse-2 {
+    height: 38px;
+    object-fit: cover;
+    position: relative;
+    width: 38px;
+}
+
+.base .p {
+    color: #ffffff;
+    font-family: "Nunito-Black", Helvetica;
+    font-size: 36px;
+    font-weight: 900;
+    left: 344px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 292px;
+    width: 623px;
+}
+
+.base .frame {
+    align-items: center;
+    display: inline-flex;
+    gap: 30px;
+    left: 89px;
+    position: absolute;
+    top: 135px;
+}
+
+.base .ellipse-3 {
+    height: 50px;
+    object-fit: cover;
+    position: relative;
+    width: 50px;
+}
+
+.base .frame-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+}
+
+.base .text-wrapper-4 {
+    color: #ffffff;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+}
+
+.base .text-wrapper-5 {
+    color: #dddddd;
+    font-family: "Nunito-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: 791px;
+}
+
+.base .frame-3 {
+    align-items: center;
+    background-color: #01aeef;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 55px;
+    justify-content: center;
+    left: 506px;
+    padding: 10px;
+    position: absolute;
+    top: 421px;
+    width: 299px;
+}
+
+.base .text-wrapper-6 {
+    color: #ffffff;
+    font-family: "Nunito-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+}
+
+.base .frame-4 {
+    background-color: #ffffff;
+    height: 144px;
+    left: 89px;
+    position: absolute;
+    top: 529px;
+    width: 395px;
+}
