@@ -1,10 +1,6 @@
 const { OpenAI } = require('openai');
 const dotenv = require('dotenv').config();
 
-export const config = {
-   runtime: 'edge', regions: 'iad1'
-}
-
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
