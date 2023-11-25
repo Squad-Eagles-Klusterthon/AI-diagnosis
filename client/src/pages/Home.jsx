@@ -1,8 +1,9 @@
 import { React, useEffect, useState } from "react";
 import "./home.css";
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import send from '../img/calender/akar-icons_send.svg';
 import {baseUrl} from '../config/api';
+import { useAuth } from './context'
 import axios from 'axios';
 
 export const Home = () => {
@@ -11,9 +12,15 @@ export const Home = () => {
     const [msg, setMsg] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
+    const navigate = useNavigate()
+    const {currentUser, token, errmsg} = useAuth();
+
     useEffect(() => {
+        if (!currentUser) {
+            navigate('/login')
+          }
         setMyMessages(messages);
-    }, [messages])
+    }, [messages, currentUser, navigate])
     const onChange = e => {
         setMsg(e.target.value);
     }
