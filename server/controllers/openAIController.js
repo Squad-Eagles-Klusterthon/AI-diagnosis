@@ -5,9 +5,6 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
 
-
-
-
 /**
  * @desc Get result from openAI
  * @route GET /api/chats
@@ -16,6 +13,7 @@ const openai = new OpenAI({
 const getPromptResp = async (req, res) => {
     try {
         const { content } = req.body
+        console.log("CONTENT", content);
         const completion = await openai.chat.completions.create({
             messages: [{"role": "system", "content": "You are a healthcare provider and symptom diagnoser."},
                 {"role": "user", "content": "What medical condition does these symptoms suggest"},
@@ -29,7 +27,6 @@ const getPromptResp = async (req, res) => {
         res.json(error);
     }
 };
-
 
 
 module.exports = { getPromptResp };
