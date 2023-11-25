@@ -10,7 +10,7 @@ import axios from 'axios';
 export const Home = () => {
     const deafultMsg = {"user": "chat", "text": "I am your virtual health assistant,\n Tell me the symptom(s) you are having"}
     const [messages, setMyMessages] = useState([deafultMsg]);
-    const [msg, setMsg] = useState("");
+    const [prompt, setPrompt] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isLogged, setIsLogged] = useState()
 
@@ -32,7 +32,7 @@ export const Home = () => {
 
 
     const onChange = e => {
-        setMsg(e.target.value);
+        setPrompt(e.target.value);
     }
  
     const handleLogout = () => {               
@@ -50,20 +50,20 @@ export const Home = () => {
             setIsLoading(true);
             const message = {
                 "user": "me",
-                "text": msg
+                "text": prompt
             }
             messages.push(message);
             setMyMessages(messages);
-            setMsg("")
-            const res = await axios.post(`${baseUrl}/api/chats`);
+            setPrompt("")
+            const res = await axios.get(`https://vivacious-mittens-deer.cyclic.app/api/chats/${prompt}`);
             console.log("Jezebel", res);
             const message1 = {
                 "user": "user",
-                "text": res
+                "text": res.content
             }
             messages.push(message1);
             setMyMessages(messages);
-            setMsg("");
+            setPrompt("");
             setIsLoading(false)
             console.log(messages);
         } catch (error) {
@@ -128,7 +128,7 @@ export const Home = () => {
                         
                         <input 
                             onChange={e => onChange(e)}
-                            value={msg}
+                            value={prompt}
                             placeholder={isLoading ? "Getting result, please wait..." : "Type your symptoms..."}
                             autoFocus
                             onKeyDown={e => onKeyDown(e)}
