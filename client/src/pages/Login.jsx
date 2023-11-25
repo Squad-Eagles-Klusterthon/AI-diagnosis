@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import './Event.css';
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../context/context";
-import Display from "../components/display/display";
+import {  signInWithEmailAndPassword   } from 'firebase/auth';
+import { auth } from '../config/firebase.config';
 import LoadingButton from "../components/loadingspin/spinner";
 
 
@@ -13,14 +13,12 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false);
-  const {login, currentUser, setDisplayMsg, setErrMsg, errmsg, status, setStatus} = useAuth();
+  const [displayMsg, setDisplayMsg] = useState('')
   
 
   useEffect(() => {
-    if (currentUser) {
-      navigate('/')
-    }
-  }, [currentUser, navigate])
+ 
+  }, [navigate])
   
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -40,7 +38,11 @@ export default function Login() {
       try {
     
         setLoading(true);
-        await login(email, password);
+        return
+        const userCredential = signInWithEmailAndPassword(auth, email, password)
+        const user = userCredential.user;
+        console.log(user);
+        navigate("/")
         setLoading(false)
       } catch (error) {
         setDisplayMsg("error logging in, try again!", "failure")
@@ -54,7 +56,6 @@ export default function Login() {
 
   return (
     <div>
-      {errmsg !== '' && <Display /> }
         <form>
           <section className="px-4">
             <div className="event-text1 text-dark">Sign In</div>

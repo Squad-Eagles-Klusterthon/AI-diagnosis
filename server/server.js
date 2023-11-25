@@ -28,3 +28,5 @@ app.listen(port, () => {
         new Error('Server is down');
     }
 });
+
+module.exports = app;

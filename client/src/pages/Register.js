@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../context/context";
 import './Event.css';
 import { Link, useNavigate } from "react-router-dom";
+import {  createUserWithEmailAndPassword  } from 'firebase/auth';
 import axios from "axios";
-import Display from "../components/display/display";
 import LoadingButton from "../components/loadingspin/spinner";
+import { auth } from "../config/firebase.config";
 
 
 
@@ -16,15 +16,12 @@ export default function Register() {
   const [password, setPassword] = useState('')
   const [password2, setPassword2] = useState('');
   const [loading, setLoading] = useState(false);
-  const {register, currentUser, errmsg, setDisplayMsg} = useAuth();
+  const [displayMsg, setDisplayMsg] = useState('')
 
 
   useEffect(() => {
-    
-    if (currentUser) {
-      navigate('/')
-    }
-  }, [currentUser, navigate]);
+
+  }, [navigate]);
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -45,18 +42,13 @@ export default function Register() {
     } else {
       try {
         setLoading(true);
-        const res = await register(email, password);
-  
-        
-          const data = {
-            "email": email,
-            "userId": res.user.uid
-          }
-          await axios.post('/api/user', data);
-  
+        e.preventDefault()
+     
+        await createUserWithEmailAndPassword(auth, email, password);
+        navigate("/login")  
         setLoading(false);
         setDisplayMsg("successfully registered", "success")
-        navigate('/')
+        navigate('/login')
       } catch (error) {
         console.log("Failed to register", error)
         setDisplayMsg("error encountered, try again!", "failure")
@@ -68,7 +60,6 @@ export default function Register() {
 
   return (
     <div>
-      {errmsg !== '' && <Display /> }
         <form>
           <section className="px-4">
             <div className="event-text1 text-dark">Sign Up</div>

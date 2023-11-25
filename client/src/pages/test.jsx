@@ -1,8 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { React, useEffect, useState } from "react";
+import {Link, useNavigate} from 'react-router-dom';
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from '../config/firebase.config';
+
 import "./test.css";
 
 export const Appointment = () => {
+
+    const navigate = useNavigate()
+    const [isLoading, setIsLoading] = useState(false);
+    const [isLogged, setIsLogged] = useState()
+
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+              console.log("userid", user)
+              setIsLogged(true);
+            } else {
+            //   navigate("/signin");
+              console.log("user is logged out");
+            }
+          });
+        
+    }, [navigate, isLogged]);
+
+ 
+    const handleLogout = () => {               
+        signOut(auth).then(() => {
+            // navigate("/signin");
+            setIsLogged(false);
+            console.log("Signed out successfully")
+        }).catch((error) => {
+            console.log("error signing out", error);
+        });
+    }
+
+
     return (
         <div className="home">
             <div className="div">
@@ -10,32 +44,25 @@ export const Appointment = () => {
                     <div className="group">
                         <div className="nav">
                             
-                            <div className="dagsb">
-                                <Link to="/" className="text-wrapper">Home</Link>
-                            </div>
                             <div className="div-wrapper">
+                                <Link to="/home" className="text-wrapper">Home</Link>
+                            </div>
+                            <div className="dasb">
                                 <Link to="/appointment" className="text-wrapper-2">Appointment</Link>
                             </div>
                             <div className="text-wrapper-3"></div>
-                            <div className="text-wrapper-3">login/register</div>
+                            {
+                                isLogged ? <button type="link" onClick={handleLogout}>log out</button> : <div className="text-wrapper-3">login/register</div>
+                            }
                         </div>
                     </div>
                     <div className="text-wrapper-4">Logo</div>
-                    <div className="icon">
-                        <div className="notification">
-                            <div className="overlap-group">
-                                <img className="vector" alt="Vector" src="vector.svg" />
-                                <img className="img" alt="Vector" src="vector-2.svg" />
-                                <div className="ellipse" />
-                            </div>
-                        </div>
-                        <img className="ellipse-2" alt="Ellipse" src="ellipse-3.svg" />
-                    </div>
+              
                     <p className="p">Have You Had a Health Routine Check this Month?</p>
                     <div className="frame">
-                        <img className="ellipse-3" alt="Ellipse" src="ellipse-4.png" />
+                        {/* <img className="ellipse-3" alt="Ellipse" src="ellipse-4.png" /> */}
                         <div className="frame-2">
-                            <p className="text-wrapper-5">Hi Gracia, Welcome to Medpal</p>
+                            <p className="text-wrapper-5">Hi, welcome to Medpal</p>
                             <p className="text-wrapper-6">
                                 A groundbreaking healthcare software leveraging AI-powered chat agents to transform your experience,
                                 from streamlined appointment booking to addressing your diverse needs.
@@ -43,7 +70,7 @@ export const Appointment = () => {
                         </div>
                     </div>
                     <div className="frame-3">
-                        <div className="text-wrapper-7">Lets Book an Appointment</div>
+                        <Link  className="text-wrapper-7">Lets Book an Appointment</Link>
                     </div>
                     <div className="frame-4" />
                 </div>

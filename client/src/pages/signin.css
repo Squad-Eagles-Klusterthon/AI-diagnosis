@@ -1,0 +1,318 @@
+
+.SIGN-IN {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.SIGN-IN .overlap-wrapper {
+    background-color: #ffffff;
+    height: 700px;
+    width: 1300px;
+}
+
+.SIGN-IN .overlap {
+    background-image: url("./signin.png");
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 100%;
+}
+
+.SIGN-IN .frame {
+    background-color: #ffffff;
+    height: 700px;
+    left: 624px;
+    position: relative;
+    width: 50%;
+}
+
+.SIGN-IN .text-wrapper {
+    color: #000000;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 36px;
+    font-weight: 700;
+    left: 96px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 100px;
+}
+
+.SIGN-IN .input-field {
+    height: 242px;
+    left: 96px;
+    position: absolute;
+    top: 150px;
+    width: 524px;
+}
+
+.SIGN-IN .overlap-group {
+    height: 242px;
+    position: relative;
+}
+
+.SIGN-IN .div {
+    height: 242px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 524px;
+}
+
+.SIGN-IN .overlap-group-wrapper {
+    height: 57px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 524px;
+}
+
+.SIGN-IN .overlap-group-2 {
+    height: 57px;
+    position: relative;
+}
+
+.SIGN-IN .div-wrapper {
+    align-items: center;
+    border: 1px solid;
+    border-color: #7f7d7d;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 42px;
+    left: 0;
+    padding: 10px 10px 10px 16px;
+    position: absolute;
+    top: 15px;
+    width: 524px;
+}
+
+.SIGN-IN .text-wrapper-2 {
+    color: #adadad;
+    font-family: "Nunito-Regular", Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+}
+
+.SIGN-IN .frame-2 {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    gap: 10px;
+    height: 21px;
+    justify-content: center;
+    left: 16px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    width: 86px;
+}
+
+.SIGN-IN .text-wrapper-3 {
+    color: #454545;
+    font-family: "Nunito-Medium", Helvetica;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: -6px;
+    margin-top: -8px;
+    position: relative;
+    width: fit-content;
+}
+
+.SIGN-IN .input-field-2 {
+    height: 54px;
+    left: 0;
+    position: absolute;
+    top: 93px;
+    width: 524px;
+}
+
+.SIGN-IN .overlap-2 {
+    height: 54px;
+    position: relative;
+}
+
+.SIGN-IN .frame-3 {
+    align-items: center;
+    border: 1px solid;
+    border-color: #7f7d7d;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 42px;
+    left: 0;
+    padding: 10px 10px 10px 16px;
+    position: absolute;
+    top: 12px;
+    width: 524px;
+}
+
+.SIGN-IN .frame-4 {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    gap: 10px;
+    height: 21px;
+    justify-content: center;
+    left: 16px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    width: 68px;
+}
+
+.SIGN-IN .frame-5 {
+    align-items: center;
+    border: 1px solid;
+    border-color: #7f7d7d;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 42px;
+    left: 0;
+    padding: 10px 10px 10px 16px;
+    position: absolute;
+    top: 199px;
+    width: 524px;
+}
+
+.SIGN-IN .frame-6 {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    gap: 10px;
+    height: 18px;
+    justify-content: center;
+    left: 16px;
+    padding: 10px;
+    position: absolute;
+    top: 187px;
+    width: 68px;
+}
+
+.SIGN-IN .text-wrapper-4 {
+    color: #454545;
+    font-family: "Nunito-Medium", Helvetica;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: -7.46px;
+    margin-left: -0.5px;
+    margin-right: -0.5px;
+    margin-top: -9.46px;
+    position: relative;
+    width: fit-content;
+}
+
+.SIGN-IN .frame-7 {
+    align-items: center;
+    background-color: #0289c3;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 45px;
+    justify-content: center;
+    left: 96px;
+    padding: 10px;
+    position: absolute;
+    top: 522px;
+    width: 524px;
+}
+
+.SIGN-IN .text-wrapper-5 {
+    color: #ffffff;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+}
+
+.SIGN-IN .frame-8 {
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #c5c5c5;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 45px;
+    justify-content: center;
+    left: 96px;
+    padding: 10px;
+    position: absolute;
+    top: 668px;
+    width: 524px;
+}
+
+.SIGN-IN .flat-color-icons {
+    height: 25px;
+    position: relative;
+    width: 25px;
+}
+
+.SIGN-IN .text-wrapper-6 {
+    color: #4f4f4f;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+}
+
+.SIGN-IN .by-continuing-you {
+    color: transparent;
+    font-family: "Nunito-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 149px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 511px;
+}
+
+.SIGN-IN .span {
+    color: #6c6c6c;
+}
+
+.SIGN-IN .text-wrapper-7 {
+    color: #0289c3;
+}
+
+.SIGN-IN .already-have-an {
+    color: transparent;
+    font-family: "Nunito-SemiBold", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 239px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 500px;
+    width: 100%;
+}
+
+.SIGN-IN .text-wrapper-8 {
+    color: #6c6c6c;
+    font-weight: 600;
+}
+
+.SIGN-IN .text-wrapper-9 {
+    color: #0289c3;
+    font-family: "Nunito-Bold", Helvetica;
+    font-weight: 700;
+}

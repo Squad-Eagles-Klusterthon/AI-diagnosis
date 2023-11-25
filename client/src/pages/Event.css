@@ -60,7 +60,7 @@
     font-weight: 400;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #026447;
+    border: 1px solid #0289c3;
   }
   
   .input-box {
@@ -80,7 +80,7 @@
     font-weight: 600;
     font-size: 18px;
     color: white;
-    background: #026447;
+    background-color: #0289c3;
     display: block;
     margin-left: auto;
     cursor: pointer;

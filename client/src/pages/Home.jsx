@@ -3,7 +3,8 @@ import "./home.css";
 import {Link, useNavigate} from 'react-router-dom';
 import send from '../img/calender/akar-icons_send.svg';
 import {baseUrl} from '../config/api';
-import { useAuth } from './context'
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from '../config/firebase.config';
 import axios from 'axios';
 
 export const Home = () => {
@@ -11,19 +12,39 @@ export const Home = () => {
     const [messages, setMyMessages] = useState([deafultMsg]);
     const [msg, setMsg] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [isLogged, setIsLogged] = useState()
 
-    const navigate = useNavigate()
-    const {currentUser, token, errmsg} = useAuth();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        if (!currentUser) {
-            navigate('/login')
-          }
-        setMyMessages(messages);
-    }, [messages, currentUser, navigate])
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+              console.log("userid", user)
+              setIsLogged(true);
+              setMyMessages(messages);
+            } else {
+              navigate("/signin");
+              console.log("user is logged out");
+            }
+          });
+        
+    }, [messages, navigate, isLogged]);
+
+
     const onChange = e => {
         setMsg(e.target.value);
     }
+ 
+    const handleLogout = () => {               
+        signOut(auth).then(() => {
+            navigate("/signin");
+            setIsLogged(false);
+            console.log("Signed out successfully")
+        }).catch((error) => {
+            console.log("error signing out", error);
+        });
+    }
+
     const onSubmit = async(e) => {
         try {
             setIsLoading(true);
@@ -63,14 +84,16 @@ export const Home = () => {
                 <div className="base">
                     <div className="group">
                         <div className="nav">
-                            <div className="dagsb">
-                                <Link to="/" className="text-wrapper-2">Home</Link>
-                            </div>
                             <div className="div-wrapper">
+                                <Link to="/home" className="text-wrapper-2">Home</Link>
+                            </div>
+                            <div className="dagsb">
                                 <Link to="/appointment" className="text-wrapper-2">Appointment</Link>
                             </div>
                             <div className="text-wrapper-3"></div>
-                            <div className="text-wrapper-3">login/register</div>
+                            {
+                                isLogged ? <button type="link" onClick={handleLogout}>log out</button> : <div className="text-wrapper-3">login/register</div>
+                            }
                         </div>
                     </div>
                     <div className="text-wrapper-4">Logo</div>
