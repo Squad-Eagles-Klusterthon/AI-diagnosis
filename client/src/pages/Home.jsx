@@ -57,7 +57,7 @@ export const Home = () => {
                     <div className="group">
                         <div className="nav">
                             <div className="dagsb">
-                                <Link to="/" className="text-wrapper">Home</Link>
+                                <Link to="/" className="text-wrapper-2">Home</Link>
                             </div>
                             <div className="div-wrapper">
                                 <Link to="/appointment" className="text-wrapper-2">Appointment</Link>
