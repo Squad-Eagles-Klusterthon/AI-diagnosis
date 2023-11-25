@@ -13,22 +13,13 @@ const openai = new OpenAI({
  * @return the response to prompt
  */
 const prompt = async (content) => {
-    console.log("One")
     const completion = await openai.chat.completions.create({
         messages: [{"role": "system", "content": "You are a healthcare provider and symptom diagnoser."},
             {"role": "user", "content": "What medical condition does these symptoms suggest"},
             {"role": "user", "content": content}],
-        model: "gpt-3.5-turbo-0613",
+        model: "gpt-3.5-turbo",
     });
-    console.log("Two")
-    const reason = completion.choices[0].finish_reason
-    if(reason == 'stop') {
-        console.log("Three")
-        return (completion.choices[0].message.content);
-    } else {
-        console.log("four")
-        return prompt(content);
-    }
+    return (completion.choices[0].message.content);
 }
 
 
