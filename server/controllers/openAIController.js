@@ -5,6 +5,8 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
 
+
+
 /**
  * @desc Get result from openAI
  * @route GET /api/chats
@@ -19,7 +21,6 @@ const getPromptResp = async (req, res) => {
                 {"role": "user", "content": "What medical condition does these symptoms suggest"},
                 {"role": "user", "content": content}],
             model: "gpt-3.5-turbo",
-            // stream: true
         });
         res.json(completion.choices[0]);   
     } catch (error) {
