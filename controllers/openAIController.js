@@ -1,6 +1,10 @@
 const { OpenAI } = require('openai');
 const dotenv = require('dotenv').config();
 
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY
+});
+
 /**
  * @desc handle the api call to openAI
  * @args - content: the prompt
