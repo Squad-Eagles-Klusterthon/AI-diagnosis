@@ -25,7 +25,6 @@ app.listen(port, () => {
     console.log(`server is up on port: ${port}`)
     } catch (error) {
         console.log('Server is down')
-        new Error('Server is down');
     }
 });
 

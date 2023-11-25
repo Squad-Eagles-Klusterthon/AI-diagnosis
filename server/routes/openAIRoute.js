@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { getPromptResp } = require('../controllers/openAIController')
 
-router.post('/', getPromptResp)
+router.get('/', getPromptResp)
 
 
 module.exports = router;

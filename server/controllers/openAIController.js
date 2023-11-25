@@ -35,10 +35,16 @@ const prompt = async (content) => {
  * @return the response object from api call
  */
 const getPromptResp = async (req, res) => {
-    const { content } = req.body
-    const completion = await prompt(content);
-
-    res.json(completion);
+    try {
+        const { content } = req.body
+        console.log("CONTENT", content);
+        const completion = await prompt(content);
+    
+        res.json(completion);   
+    } catch (error) {
+        console.log("error", error);
+        res.json(error);
+    }
 };
 
 
