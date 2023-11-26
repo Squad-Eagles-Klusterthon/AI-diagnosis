@@ -27,6 +27,7 @@ export const Home = () => {
               console.log("user is logged out");
             }
           });
+          console.log("MESSAGES", messages)
         
     }, [messages, navigate, isLogged]);
 
@@ -48,6 +49,7 @@ export const Home = () => {
     const onSubmit = async(e) => {
         try {
             setIsLoading(true);
+            console.log("Calling open")
             const message = {
                 "user": "me",
                 "text": prompt
@@ -55,6 +57,7 @@ export const Home = () => {
             messages.push(message);
             setMyMessages(messages);
             setPrompt("")
+            console.log("MESSAGES-2", messages)
             const res = await axios.get(`https://vivacious-mittens-deer.cyclic.app/api/chats/${prompt}`);
             console.log("Jezebel", res);
             const message1 = {
@@ -65,7 +68,7 @@ export const Home = () => {
             setMyMessages(messages);
             setPrompt("");
             setIsLoading(false)
-            console.log(messages);
+            console.log("MESSAGES-3", messages)
         } catch (error) {
             setIsLoading(false)
             console.log(error);

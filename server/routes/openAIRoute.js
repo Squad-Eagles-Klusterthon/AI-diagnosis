@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { getPromptResp } = require('../controllers/openAIController')
 
-router.get('/', getPromptResp)
+router.get('/chats/:content', getPromptResp)
 
 
 module.exports = router;

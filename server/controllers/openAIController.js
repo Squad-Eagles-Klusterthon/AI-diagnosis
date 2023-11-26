@@ -14,7 +14,7 @@ const openai = new OpenAI({
  */
 const getPromptResp = async (req, res) => {
     try {
-        const { content } = req.body
+        const { content } = req.params;
         console.log("CONTENT", content);
         const completion = await openai.chat.completions.create({
             messages: [{"role": "system", "content": "You are a healthcare provider and symptom diagnoser."},
