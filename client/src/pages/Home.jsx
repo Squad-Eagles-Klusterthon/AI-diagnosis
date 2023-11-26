@@ -13,6 +13,7 @@ export const Home = () => {
     const [prompt, setPrompt] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isLogged, setIsLogged] = useState()
+    const [directive, setDirective] = useState(false)
 
     const navigate = useNavigate();
 
@@ -28,8 +29,20 @@ export const Home = () => {
             }
           });
           console.log("MESSAGES", messages)
+        if(directive) {
+            setTimeout(() => {
+                const message = {
+                    "user": "me",
+                    "text": "In need of further assistance, book an appointment without one of our specialists. Go to the appointment section"
+                }
+                messages.push(message);
+                setMyMessages(messages);
+                setPrompt("")
+                setDirective(false)
+            }, 4000);
+        }
         
-    }, [messages, navigate, isLogged]);
+    }, [messages, navigate, isLogged, directive]);
 
 
     const onChange = e => {
@@ -46,6 +59,7 @@ export const Home = () => {
         });
     }
 
+
     const onSubmit = async(e) => {
         try {
             setIsLoading(true);
@@ -59,16 +73,16 @@ export const Home = () => {
             setPrompt("")
             console.log("MESSAGES-2", messages)
             const res = await axios.get(`https://vivacious-mittens-deer.cyclic.app/api/chats/${prompt}`);
-            console.log("Jezebel", res);
+            console.log("Jezebel", res.data.message.content);
             const message1 = {
-                "user": "user",
-                "text": res.content
+                "user": "chat",
+                "text": res.data.message.content
             }
             messages.push(message1);
             setMyMessages(messages);
             setPrompt("");
             setIsLoading(false)
-            console.log("MESSAGES-3", messages)
+            setDirective(true);
         } catch (error) {
             setIsLoading(false)
             console.log(error);
