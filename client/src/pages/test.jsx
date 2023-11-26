@@ -40,7 +40,7 @@ export const Appointment = () => {
     useEffect(() => {
         console.log(baseUrl)
         onAuthStateChanged(auth, (user) => {
-            if (!user) {
+            if (user) {
                 console.log("userid", user)
                 fetchDoctors();
                 // fetchMyAppointments('ha');
