@@ -96,7 +96,7 @@ export const Home = () => {
                             }
                         </div>
                     </div>
-                    <div className="text-wrapper-4">Logo</div>
+                    <div className="text-wrapper-4">MedPal</div>
                     <div className="icon">
                     </div>
                     <div className="frame">

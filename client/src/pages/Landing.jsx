@@ -56,7 +56,7 @@ export const Landing = () => {
                             }
                         </div>
                     </div> */}
-                    <div className="text-wrapper-4">Logo</div>
+                    <div className="text-wrapper-4">MedPal</div>
               
                     <p className="p">Have You Had a Health Routine Check this Month?</p>
                     <div className="frame">

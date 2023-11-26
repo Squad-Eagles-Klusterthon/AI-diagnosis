@@ -58,10 +58,12 @@ export const SignIn = () => {
         <div className="SIGN-IN">
             <div className="overlap-wrapper">
                 <div className="overlap">
-                    <p>demo email: squad@gmail.com || demo pwd: eagles</p>
+                    
                     <div className="frame">
                         <div className="text-wrapper">Sign In</div>
                         <div className="input-field">
+                            <p>demo login email: <strong>squad@gmail.com</strong> | 
+                            pwd: <strong>eagles</strong></p>
                             <form>
                             <section className="px-4">
                                 <div className="event-text1 text-dark">Sign In</div>
