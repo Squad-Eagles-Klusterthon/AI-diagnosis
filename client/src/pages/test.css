@@ -636,6 +636,18 @@
     cursor: pointer;
 }
 
+.home .landing-btn {
+    color: #01aeef;
+    background-color: #fff;
+    padding: 13px 20px;
+    border-radius: 18px;
+    position: relative;
+    left: 550px;
+    right: 0;
+    top: -10px;
+
+}
+
 .home .group-5 {
     height: 16px;
     margin-right: -6px;

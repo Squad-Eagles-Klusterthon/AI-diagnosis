@@ -41,21 +41,13 @@ export const Landing = () => {
         <div className="home">
             <div className="div">
                 <div className="base">
-                    {/* <div className="group">
+                    <div className="group">
                         <div className="nav">
-                            
-                            <div className="dagsb">
-                                <Link to="/" className="text-wrapper">Home</Link>
+                        <div className="div-wrapper">
+                                <Link to="/home" className="text-wrapper-2 landing-btn">Get started</Link>
                             </div>
-                            <div className="div-wrapper">
-                                <Link to="/appointment" className="text-wrapper-2">Appointment</Link>
-                            </div>
-                            <div className="text-wrapper-3"></div>
-                            {
-                                isLogged ? <button type="link" onClick={handleLogout}>log out</button> : <div className="text-wrapper-3">login/register</div>
-                            }
                         </div>
-                    </div> */}
+                    </div>
                     <div className="text-wrapper-4">MedPal</div>
               
                     <p className="p">Have You Had a Health Routine Check this Month?</p>
@@ -69,9 +61,9 @@ export const Landing = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="frame-3">
+                    {/* <div className="frame-3">
                         <Link to="/home" className="text-wrapper-7">Get started</Link>
-                    </div>
+                    </div> */}
                     <div className="frame-4" />
                 </div>
                 <div className="card">
