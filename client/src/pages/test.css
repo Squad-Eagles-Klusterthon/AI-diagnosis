@@ -491,7 +491,7 @@
     left: 60px;
     overflow: hidden;
     position: absolute;
-    top: 904px;
+    top: 550px;
     width: 1320px;
 }
 
@@ -500,7 +500,7 @@
     font-family: "Nunito-Bold", Helvetica;
     font-size: 24px;
     font-weight: 700;
-    left: 23px;
+    left: 0;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
@@ -509,7 +509,7 @@
 
 .home .appointment-section {
     height: 440px;
-    left: 23px;
+    left: 0;
     position: absolute;
     top: 24px;
     width: 618px;
@@ -538,12 +538,44 @@
     width: 618px;
 }
 
+.home .appointment-doc {
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    height: 334px;
+    right: 55px;
+    overflow: hidden;
+    position: absolute;
+    top: 130px;
+    width: 618px;
+}
+
+.home .text-wrapper-doc {
+    color: #000000;
+    font-family: "Nunito-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    left: 50%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    top: 30px;
+}
+
 .home .appointment-sub-nav {
     align-items: flex-start;
     display: inline-flex;
     gap: 69px;
     left: 29px;
     position: absolute;
+    top: 30px;
+}
+
+.home .appointment-sub-doc {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 69px;
+    left: 29px;
+    position: relative;
     top: 30px;
 }
 
@@ -593,6 +625,15 @@
     left: 41px;
     position: absolute;
     top: 75px;
+}
+
+.home .calendly {
+    background-color: #01aeef;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 .home .group-5 {

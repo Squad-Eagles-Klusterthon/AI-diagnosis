@@ -1,0 +1,39 @@
+{
+    "doctors": [
+        {
+            "name": "Elias Tontenken",
+            "gender": "M",
+            "specialty": "Dentist",
+            "Language": "English, French",
+            "url": "https://calendly.com/harryofficialchidi/consultation"
+        },
+        {
+            "name": "Mary Akodo",
+            "gender": "F",
+            "specialty": "Gynaecologist",
+            "Language": "English",
+            "url": "https://calendly.com/harryofficialchidi/consultation"
+        },
+        {
+            "name": "Musa Ibrahim",
+            "gender": "M",
+            "specialty": "General Practisioner",
+            "Language": "English, Hausa",
+            "url": "https://calendly.com/harryofficialchidi/consultation"
+        },
+        {
+            "name": "Chukwuma Stephanie",
+            "gender": "F",
+            "specialty": "General Practisioner",
+            "Language": "English, Igbo, French",
+            "url": "https://calendly.com/harryofficialchidi/consultation"
+        },
+        {
+            "name": "Tobi Jemisola",
+            "gender": "F",
+            "specialty": "Dentist",
+            "Language": "English, Yoruba",
+            "url": "https://calendly.com/harryofficialchidi/consultation"
+        }
+    ]
+  }

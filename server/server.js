@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 
 const chatRouter = require('./routes/openAIRoute')
+const specialistRouter = require('./routes/specialistRoute')
 
 
 const port = process.env.PORT || 3000;
@@ -17,7 +18,7 @@ app.use(express.json());
 
 //ROUTES
 app.use("/api", chatRouter);
-// app.use("/api/specialist");
+app.use("/api/specialists", specialistRouter);
 
 
 app.listen(port, () => {

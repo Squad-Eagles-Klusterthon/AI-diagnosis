@@ -1,1 +1,1 @@
-export const baseUrl = 'localhost:5000';
+export const baseUrl = 'https://vivacious-mittens-deer.cyclic.app';
