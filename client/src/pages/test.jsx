@@ -54,8 +54,9 @@ export const Appointment = () => {
     }, [navigate, isLogged, appointments]);
 
 
-    const headers = {
-  'Authorization': `Bearer ${process.env.CALENDLY_PAT}`,
+const pat = 'eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzAxMDE1Mjc5LCJqdGkiOiJmZmQ5OTU4YS0xYjM0LTQ0NWYtOTE4Yy1hZTJjN2VjYmY0ZTAiLCJ1c2VyX3V1aWQiOiIxODVjNTllMy1kMDZkLTQwNmMtYjg0ZC1hNTIxNzVkMzQxZTMifQ.wFKwvOj_l1IMQnmU0OmVRWKbJmONBuG-ZKW_i12hHbI4Vdy60bumUbDMTUpKld-U4sVsUr9B9cUz89lR_Ou5-Q'
+const headers = {
+  'Authorization': `Bearer ${pat}`,
   'Content-Type': 'application/json',
 };
 
