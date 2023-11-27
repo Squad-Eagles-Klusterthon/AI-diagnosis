@@ -21,14 +21,12 @@ export const Appointment = () => {
         console.log("RES", res.data.doctors)
         setSpecialists(res.data.doctors);
         console.log("FETCHEC spec", specialists)
-
     }
 
     // const fetchMyAppointments = async (email) => {
     //     const res = await axios.get(`${baseUrl}/api/appointments/:email`);
     //     setAppointments(res.data);
     //     console.log("FETCHEC appoint", appointments)
-
     // }
 
     // const scheduleEvent = async () => {
@@ -40,7 +38,7 @@ export const Appointment = () => {
     useEffect(() => {
         console.log(baseUrl)
         onAuthStateChanged(auth, (user) => {
-            if (user) {
+            if (!user) {
                 console.log("userid", user)
                 fetchDoctors();
                 // fetchMyAppointments('ha');
@@ -55,23 +53,26 @@ export const Appointment = () => {
         
     }, [navigate, isLogged, appointments]);
 
-    // const appoint = (e) => {
-    //     const temp = appointments.push(e.data.payload);
-    //     console.log("PLD", e.data.payload)
-    //     setAppointments(temp)
-    //     console.log("APPOUINT", appointments)
-    // }
+    const tank = 'eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzAxMDE1Mjc5LCJqdGkiOiJmZmQ5OTU4YS0xYjM0LTQ0NWYtOTE4Yy1hZTJjN2VjYmY0ZTAiLCJ1c2VyX3V1aWQiOiIxODVjNTllMy1kMDZkLTQwNmMtYjg0ZC1hNTIxNzVkMzQxZTMifQ.wFKwvOj_l1IMQnmU0OmVRWKbJmONBuG-ZKW_i12hHbI4Vdy60bumUbDMTUpKld-U4sVsUr9B9cUz89lR_Ou5-Q'
+
+    const headers = {
+  'Authorization': `Bearer ${tank}`,
+  'Content-Type': 'application/json',
+};
+
+    const appoint = async (e) => {
+        const uri = e.data.payload.event.uri;
+        const res = await axios.get(uri, { headers });
+        console.log("MAIN", res.data.resource);
+        setAppointments([...appointments, res.data.resource]);
+        console.log("APPOUINT", appointments)
+    }
  
     useCalendlyEventListener({
-        // onEventScheduled: (e) => {
-        //     console.log(e.data.payload)
-        //     setAppointments(e.data.payload);
-
-        // }
         onProfilePageViewed: () => console.log("onProfilePageViewed"),
         onDateAndTimeSelected: () => console.log("onDateAndTimeSelected"),
         onEventTypeViewed: () => console.log("onEventTypeViewed"),
-        onEventScheduled: (e) => console.log(e.data.payload),
+        onEventScheduled: (e) => appoint(e),
       });
 
 
@@ -86,6 +87,10 @@ export const Appointment = () => {
         });
     }
 
+    const date = (dateStr) => {
+        const dt  = new Date(dateStr);
+        return dt.toLocaleString();
+    }
 
     return (
         <div className="home">
@@ -130,15 +135,17 @@ export const Appointment = () => {
                         <div className="text-wrapper-14">My Appointments Overview</div>
                         <div className="appointment-card">
                             <div className="appointment-sub-nav">
-                                <div className="text-wrapper-15">No.</div>
-                                <div className="text-wrapper-16">Appointment</div>
+                                <div className="text-wrapper-15">Name</div>
+                                <div className="text-wrapper-15">Time</div>
+                                <div className="text-wrapper-16">Location</div>
                             </div>
                             <div className="frame-6">
                                 {
                                     (appointments.length > 0) ? appointments.map((appointment, idx) => (
                                         <div className="group-5">
-                                        <div className="text-wrapper-18">{idx + 1}</div>
-                                        <div className="text-wrapper-19">{appointment.invitee.uri}</div>
+                                        <div className="text-wrapper-18">{appointment.name}</div>
+                                        <div className="text-wrapper-18">{date(appointment.start_time)}</div>
+                                        <a className="text-wrapper-19" href={appointment.location.join_url}>here</a>
                                     </div>
                                     )) : null
                                 }
@@ -159,13 +166,16 @@ export const Appointment = () => {
                                     (specialists.length > 0) ? specialists.map(specialist => (
                                         <div className="group-5">
                                         <div className="text-wrapper-18">{specialist.name} | {specialist.gender}</div>
-                                        <div className="text-wrapper-19">                                        <PopupButton
+                                        <div className="text-wrapper-19">                                        
+                                        <PopupButton
                                         url={`${specialist.url}`}
+                                        
                                         className="calendly"
                                         rootElement={document.getElementById("root")}
                                         text="Schedule appointment"
                                         textColor="#ffffff"
                                         color="#00a2ff"
+                                        
                                         
                                         /></div>
                                         <div className="text-wrapper-20">{specialist.specialty}</div>
