@@ -57,7 +57,7 @@ export const SignIn = () => {
         if(myUser) {
             navigate("/home");
         }
-      }, [navigate, myUser])
+      }, [navigate, myUser, loading])
 
 
     return (
