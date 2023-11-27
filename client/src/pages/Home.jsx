@@ -32,7 +32,7 @@ export const Home = () => {
         if(directive) {
             setTimeout(() => {
                 const message = {
-                    "user": "me",
+                    "user": "chat",
                     "text": "In need of further assistance, book an appointment without one of our specialists. Go to the appointment section"
                 }
                 messages.push(message);
