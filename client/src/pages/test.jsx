@@ -49,7 +49,7 @@ export const Appointment = () => {
               console.log("user is logged out");
               
             }
-          });
+        });
         
     }, [navigate, isLogged, appointments]);
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./signin.css";
 import "./Event.css"
 import { useNavigate, Link } from "react-router-dom";
-import {  signInWithEmailAndPassword   } from 'firebase/auth';
+import {  signInWithEmailAndPassword, onAuthStateChanged  } from 'firebase/auth';
 import { auth } from '../config/firebase.config';
 import LoadingButton from "../components/loadingspin/spinner";
 
@@ -26,8 +26,9 @@ export const SignIn = () => {
   
     const handleLogin = async(e) => {
       e.preventDefault();
+      setLoading(true);
       // Perform form submission or other actions 
-      if (email === '' || !isValidEmail(email)) {
+      if (email === '') {
      
         setDisplayMsg("incorrect email address", "failure");
       } else if(!password || password.length < 6 ) {
@@ -35,8 +36,6 @@ export const SignIn = () => {
         setDisplayMsg("password must be at least 6 characters long", "failure");
       } else {
         try {
-      
-          setLoading(true);
           const userCredential = signInWithEmailAndPassword(auth, email, password)
           const user = userCredential.user;
           setMyUser(user);
@@ -54,10 +53,16 @@ export const SignIn = () => {
       }
 
       useEffect(() => {
-        if(myUser) {
-            navigate("/home");
-        }
-      }, [navigate, myUser, loading])
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                navigate("/home")
+            } else {
+              navigate("/signin");
+              console.log("user is logged out");
+              
+            }
+        });
+      }, [navigate, loading])
 
 
     return (
