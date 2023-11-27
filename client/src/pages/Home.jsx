@@ -126,10 +126,10 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className="frame-3" />
-                    <p className="let-our-AI-help-you">Let Our AI Help You&nbsp;&nbsp;In Addressing Your Needs</p>
+                    <p className="let-our-AI-help-you">Our AI Helps You&nbsp;&nbsp;In Addressing Health Your Needs</p>
                 </div>
                 <div className="chat-bot">
-                <img className="akar-icons-send" alt="Akar icons send" src={send} />
+                {/* <img className="akar-icons-send" alt="Akar icons send" src={send} /> */}
                     <div className="message-box">
                         {
                             messages.map(msg => (

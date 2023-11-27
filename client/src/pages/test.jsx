@@ -176,7 +176,7 @@ export const Appointment = () => {
                                         /></div>
                                         <div className="text-wrapper-20">{specialist.specialty}</div>
                                     </div>
-                                    )) : <div>No doctors avalilable</div>
+                                    )) : <div>Loading...</div>
                                 }
 
                             </div>
