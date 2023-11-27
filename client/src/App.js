@@ -5,6 +5,7 @@ import { Appointment } from './pages/test';
 import { SignUp } from './pages/SignUp';
 import { SignIn } from './pages/SignIn';
 import { Landing } from './pages/Landing';
+import { Footer } from './components/Footer';
 
 function App() {
   return (

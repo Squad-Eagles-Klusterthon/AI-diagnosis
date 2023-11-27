@@ -7,16 +7,11 @@
 }
 
 .home .div {
-    /* background-color: #f0f0f0;
-    height: 1832px;
-    position: relative;
-    width: 1440px; */
-
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
 }
 
@@ -565,7 +560,7 @@
     align-items: flex-start;
     display: inline-flex;
     gap: 69px;
-    left: 29px;
+    left: 0;
     position: absolute;
     top: 30px;
 }
@@ -574,7 +569,7 @@
     align-items: flex-start;
     display: inline-flex;
     gap: 69px;
-    left: 29px;
+    left: 0;
     position: relative;
     top: 30px;
 }

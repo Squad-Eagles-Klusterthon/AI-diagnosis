@@ -13,12 +13,11 @@ export const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false);
-    const [displayMsg, setDisplayMsg] = useState('')
+    const [displayMsg, setDisplayMsg] = useState('');
+    const [myUser, setMyUser] = useState()
     
   
-    useEffect(() => {
-   
-    }, [navigate])
+
     
     const isValidEmail = (email) => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -40,6 +39,7 @@ export const SignIn = () => {
           setLoading(true);
           const userCredential = signInWithEmailAndPassword(auth, email, password)
           const user = userCredential.user;
+          setMyUser(user);
           console.log(user);
           setLoading(false)
           navigate("/home")
@@ -52,6 +52,12 @@ export const SignIn = () => {
         }
       };
       }
+
+      useEffect(() => {
+        if(myUser) {
+            navigate("/home");
+        }
+      }, [navigate, myUser])
 
 
     return (

@@ -38,7 +38,7 @@ export const Appointment = () => {
     useEffect(() => {
         console.log(baseUrl)
         onAuthStateChanged(auth, (user) => {
-            if (!user) {
+            if (user) {
                 console.log("userid", user)
                 fetchDoctors();
                 // fetchMyAppointments('ha');
@@ -53,10 +53,9 @@ export const Appointment = () => {
         
     }, [navigate, isLogged, appointments]);
 
-    const tank = 'eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzAxMDE1Mjc5LCJqdGkiOiJmZmQ5OTU4YS0xYjM0LTQ0NWYtOTE4Yy1hZTJjN2VjYmY0ZTAiLCJ1c2VyX3V1aWQiOiIxODVjNTllMy1kMDZkLTQwNmMtYjg0ZC1hNTIxNzVkMzQxZTMifQ.wFKwvOj_l1IMQnmU0OmVRWKbJmONBuG-ZKW_i12hHbI4Vdy60bumUbDMTUpKld-U4sVsUr9B9cUz89lR_Ou5-Q'
 
     const headers = {
-  'Authorization': `Bearer ${tank}`,
+  'Authorization': `Bearer ${process.env.CALENDLY_PAT}`,
   'Content-Type': 'application/json',
 };
 
@@ -124,9 +123,6 @@ export const Appointment = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="frame-3">
-                        <Link to="#appointment" className="text-wrapper-7">Book an Appointment</Link>
-                    </div>
                     <div className="frame-4" />
                 </div>
 
@@ -135,17 +131,17 @@ export const Appointment = () => {
                         <div className="text-wrapper-14">My Appointments Overview</div>
                         <div className="appointment-card">
                             <div className="appointment-sub-nav">
-                                <div className="text-wrapper-15">Name</div>
-                                <div className="text-wrapper-15">Time</div>
-                                <div className="text-wrapper-16">Location</div>
+                                <div className="text-wrapper-15">Description</div>
+                                <div className="text-wrapper-16">Time</div>
+                                <div className="text-wrapper-17">Location</div>
                             </div>
                             <div className="frame-6">
                                 {
                                     (appointments.length > 0) ? appointments.map((appointment, idx) => (
                                         <div className="group-5">
                                         <div className="text-wrapper-18">{appointment.name}</div>
-                                        <div className="text-wrapper-18">{date(appointment.start_time)}</div>
-                                        <a className="text-wrapper-19" href={appointment.location.join_url}>here</a>
+                                        <div className="text-wrapper-19">{date(appointment.start_time)}</div>
+                                        <a className="text-wrapper-20" href={appointment.location.join_url}>here</a>
                                     </div>
                                     )) : null
                                 }

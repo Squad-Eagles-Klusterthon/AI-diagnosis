@@ -4,6 +4,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from '../config/firebase.config';
 
 import "./test.css";
+import { Footer } from "../components/Footer";
 
 export const Landing = () => {
 
@@ -80,7 +81,7 @@ export const Landing = () => {
                         </div>
                     </div>
                     <div className="frame-5">
-                        <div className="text-wrapper-10">View</div>
+                        <Link to="/home" className="text-wrapper-10">View</Link>
                     </div>
                 </div>
                 <div className="card-2">
@@ -96,7 +97,7 @@ export const Landing = () => {
                         </div>
                     </div>
                     <div className="frame-5">
-                        <div className="text-wrapper-10">View</div>
+                        <Link to="/home" className="text-wrapper-10">View</Link>
                     </div>
                 </div>
                 <div className="card-3">
@@ -113,7 +114,7 @@ export const Landing = () => {
                         {/* <img className="group-4" alt="Group" src="group-2.png" /> */}
                     </div>
                     <div className="frame-5">
-                        <div className="text-wrapper-10">View</div>
+                        <Link to="/appointment" className="text-wrapper-10">View</Link>
                     </div>
                 </div>
                 {/* <div className="slide-show">
@@ -121,8 +122,10 @@ export const Landing = () => {
                     <div className="rectangle-2" />
                     <div className="rectangle-2" />
                 </div> */}
-                <div className="text-wrapper-12">Services</div>
+                <div className="text-wrapper-12">Features</div>
+
             </div>
+            
         </div>
     );
 };
